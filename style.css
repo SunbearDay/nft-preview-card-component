@@ -73,10 +73,6 @@ main {
   position: absolute;
 }
 
-.card-header .icon-view {
-  z-index: 1;
-}
-
 .card-header > div::before {
   background-color: hsla(178, 100%, 50%, 0.5);
   content: "";
@@ -86,6 +82,10 @@ main {
 
 .card-header > div:hover {
   opacity: 1;
+}
+
+.card-header .icon-view {
+  z-index: 1;
 }
 
 .card-body a {
