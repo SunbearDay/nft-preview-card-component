@@ -10,6 +10,8 @@
   --color-card-bg: hsl(216, 50%, 16%);
   --color-line: hsl(215, 32%, 27%);
   --color-white: hsl(0, 0%, 100%);
+
+  --color-overlay-bg: hsla(178, 100%, 50%, 0.5);
 }
 
 /* Font size (paragraph): 18px */
@@ -49,13 +51,14 @@ main {
   min-height: 100%;
   display: grid;
   place-items: center;
+  padding: 1em;
 }
 
 .card {
   background-color: var(--color-card-bg);
   border-radius: 1em;
   padding: 1em;
-  width: 375px;
+  max-width: 375px;
 }
 
 .card-header {
@@ -65,7 +68,7 @@ main {
   overflow: hidden;
 }
 
-.card-header > div {
+.card-header-overlay {
   display: grid;
   inset: 0;
   opacity: 0;
@@ -73,18 +76,18 @@ main {
   position: absolute;
 }
 
-.card-header > div::before {
-  background-color: hsla(178, 100%, 50%, 0.5);
+.card-header-overlay::before {
+  background-color: var(--color-overlay-bg);
   content: "";
   inset: 0;
   position: absolute;
 }
 
-.card-header > div:hover {
+.card-header-overlay:hover {
   opacity: 1;
 }
 
-.card-header .icon-view {
+.card-header-overlay .icon-view {
   z-index: 1;
 }
 
@@ -144,4 +147,15 @@ hr {
 
 .card-footer a:hover {
   color: var(--color-cyan);
+}
+
+/* Attribution styles. */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
